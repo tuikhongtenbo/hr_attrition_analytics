@@ -98,7 +98,7 @@ This balance means no special sampling techniques (SMOTE, undersampling) are req
 <!-- <chèn ảnh vào đây: reports/figures/univariate_numerical.png (Histogram của Age/Monthly Income) và reports/figures/univariate_categorical.png (Bar chart của Job Role/Overtime)> -->
 
 <p align="center">
-  <img src="reports/figures/ordinal_univariate_categorical.png" width="90%" />
+  <img src="reports/figures/ordinal_univariate_categorical.png" width="95%" />
 </p>
 
 ### Bivariate Analysis
