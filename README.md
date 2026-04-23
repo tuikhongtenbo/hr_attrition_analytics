@@ -85,7 +85,7 @@ This balance means no special sampling techniques (SMOTE, undersampling) are req
 - `Distance from Home`: Uniformly distributed, 1-99 km
 
 <p align="center">
-  <img src="reports/figures/univariate_numerical.png" width="85%" />
+  <img src="reports/figures/univariate_numerical.png" width="90%" height="90%" />
 </p>
 
 **Categorical Features:**
