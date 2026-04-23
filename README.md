@@ -71,8 +71,9 @@ The target variable `Attrition` is relatively balanced:
 This balance means no special sampling techniques (SMOTE, undersampling) are required.
 
 <!-- <chèn ảnh vào đây: reports/figures/target_distribution.png (Pie chart hoặc Count plot của Attrition)> -->
-
-![Target Distribution](reports/figures/target_distribution.png)
+<p align="center">
+  <img src="reports/figures/target_distribution.png" width="75%" />
+</p>
 
 ### Univariate Analysis
 
@@ -83,7 +84,9 @@ This balance means no special sampling techniques (SMOTE, undersampling) are req
 - `Years at Company`: Right-skewed, 1-47 years, mean ~15.7
 - `Distance from Home`: Uniformly distributed, 1-99 km
 
-![Univariate Numerical](reports/figures/univariate_numerical.png)
+<p align="center">
+  <img src="reports/figures/univariate_numerical.png" width="85%" />
+</p>
 
 **Categorical Features:**
 
@@ -94,8 +97,9 @@ This balance means no special sampling techniques (SMOTE, undersampling) are req
 
 <!-- <chèn ảnh vào đây: reports/figures/univariate_numerical.png (Histogram của Age/Monthly Income) và reports/figures/univariate_categorical.png (Bar chart của Job Role/Overtime)> -->
 
-![Ordinal Univariate Categorical](reports/figures/ordinal_univariate_categorical.png)
-![Nominal Univariate Categorical](reports/figures/nominal_univariate_categorical.png)
+<p align="center">
+  <img src="reports/figures/ordinal_univariate_categorical.png" width="90%" />
+</p>
 
 ### Bivariate Analysis
 
@@ -108,7 +112,9 @@ Key relationships identified between features and Attrition:
 
 <!-- <chèn ảnh vào đây: reports/figures/bivariate_overtime_attrition.png (Stacked bar chart hoặc Count plot Overtime vs Attrition)> -->
 
-![Bivariate - Overtime vs Attrition](reports/figures/bivariate_overtime_attrition.png)
+<p align="center">
+  <img src="reports/figures/bivariate_overtime_attrition.png" width="90%" />
+</p>
 
 ### Multivariate Analysis
 
@@ -117,7 +123,7 @@ Key relationships identified between features and Attrition:
 
 <!-- <chèn ảnh vào đây: reports/figures/correlation_matrix.png (Heatmap ma trận tương quan)> -->
 
-![Correlation Matrix](reports/figures/correlation_matrix.png)
+![Correlation Matrix](reports/figures/numerical_correlation_matrix.png)
 
 ### Power BI Dashboard
 
@@ -159,8 +165,13 @@ Using the **IQR Method**:
 | Other features   | 0                 | No treatment needed     |
 
 <!-- <chèn ảnh vào đây: reports/figures/outliers_boxplot.png (Boxplot của Years at Company và Monthly Income trước/sau khi cap)> -->
+Before using IQR:
 
-![Outliers Boxplot](reports/figures/outliers_boxplot.png)
+![Outliers Boxplot](reports/figures/before_outliers_boxplot.png)
+
+After using IQR:
+
+![Outliers Boxplot](reports/figures/after_outliers_boxplot.png)
 
 ### Feature Engineering
 
@@ -169,6 +180,17 @@ New features created through:
 - Ordinal encoding for ordered categorical variables
 - One-hot encoding for nominal variables
 - Feature interactions and domain-specific transformations
+
+### Feature Selection
+
+To reduce dimensionality and remove highly correlated features, we used two main techniques:
+- **Correlation Matrix**: Analyzed and removed numerical features with very high mutual correlation to prevent multicollinearity.
+- **Feature Importance**: Trained a preliminary Random Forest model to rank features by their importance in predicting Attrition, filtering out the lowest contributing features.
+
+<!-- <chèn ảnh vào đây: reports/figures/feature_importance.png (Biểu đồ Feature Importance từ Random Forest)> -->
+<p align="center">
+  <img src="reports/figures/feature_importance.png" width="90%" />
+</p>
 
 ### Hypothesis Testing
 
