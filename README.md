@@ -285,11 +285,6 @@ Output files organized in `data/scenarios/` with consistent `train_test/` and `k
 - **Trade-off:** Reducing features from 27 to 11 only drops F2 by ~1.4%, offering a simpler, more interpretable model
 - **Business Impact:** The model can identify ~74% of at-risk employees, enabling targeted retention programs
 
-### Future Work
-
-- Deploy model as API for real-time predictions
-- Incorporate temporal data for trend analysis
-
 ---
 
 ## Project Structure
