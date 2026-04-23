@@ -1,3 +1,10 @@
+# Project-specific
+*.xlsx
+*.pptx
+.DS_Store
+Thumbs.db
+*.tmp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
