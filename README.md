@@ -165,11 +165,11 @@ Using the **IQR Method**:
 | Other features   | 0                 | No treatment needed     |
 
 <!-- <chèn ảnh vào đây: reports/figures/outliers_boxplot.png (Boxplot của Years at Company và Monthly Income trước/sau khi cap)> -->
-Before using IQR:
+Before using Winsorization:
 
 ![Outliers Boxplot](reports/figures/before_outliers_boxplot.png)
 
-After using IQR:
+After using Winsorization:
 
 ![Outliers Boxplot](reports/figures/after_outliers_boxplot.png)
 
