@@ -71,6 +71,7 @@ The target variable `Attrition` is relatively balanced:
 This balance means no special sampling techniques (SMOTE, undersampling) are required.
 
 <!-- <chèn ảnh vào đây: reports/figures/target_distribution.png (Pie chart hoặc Count plot của Attrition)> -->
+
 <p align="center">
   <img src="reports/figures/target_distribution.png" width="75%" />
 </p>
@@ -127,9 +128,9 @@ Key relationships identified between features and Attrition:
 
 ### Power BI Dashboard
 
-<!-- Power BI interactive dashboard will be added here -->
+🔗 **Live Dashboard:** [View on Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiYWIxNGM0OTYtYjdjZS00OGU1LWJlM2YtNWFiYWEyMTBjOTZkIiwidCI6IjZhYzJhZDA2LTY5MmMtNDY2My1iN2FmLWE5ZmYyYTg2NmQwYyIsImMiOjEwfQ%3D%3D)
 
-*Interactive Power BI dashboard coming soon - see [`reports/powerbi/`](reports/powerbi/)*
+![Power BI Dashboard Overview](reports/powerbi/Attrition_Overview.png)
 
 ### Key Insights
 
@@ -165,6 +166,7 @@ Using the **IQR Method**:
 | Other features   | 0                 | No treatment needed     |
 
 <!-- <chèn ảnh vào đây: reports/figures/outliers_boxplot.png (Boxplot của Years at Company và Monthly Income trước/sau khi cap)> -->
+
 Before using Winsorization:
 
 ![Outliers Boxplot](reports/figures/before_outliers_boxplot.png)
@@ -184,10 +186,12 @@ New features created through:
 ### Feature Selection
 
 To reduce dimensionality and remove highly correlated features, we used two main techniques:
+
 - **Correlation Matrix**: Analyzed and removed numerical features with very high mutual correlation to prevent multicollinearity.
 - **Feature Importance**: Trained a preliminary Random Forest model to rank features by their importance in predicting Attrition, filtering out the lowest contributing features.
 
 <!-- <chèn ảnh vào đây: reports/figures/feature_importance.png (Biểu đồ Feature Importance từ Random Forest)> -->
+
 <p align="center">
   <img src="reports/figures/feature_importance.png" width="90%" />
 </p>
