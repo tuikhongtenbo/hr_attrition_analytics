@@ -102,43 +102,68 @@ This balance means no special sampling techniques (SMOTE, undersampling) are req
   <img src="reports/figures/ordinal_univariate_categorical.png" width="95%" />
 </p>
 
-### Bivariate Analysis
+### Bivariate & Multivariate Analysis
 
-Key relationships identified between features and Attrition:
-
-- Employees with **Overtime** show higher attrition rates
-- Lower **Job Satisfaction** correlates with higher attrition
-- **Work-Life Balance** significantly impacts attrition decisions
-- **Company Reputation** and **Employee Recognition** are influential factors
-
-<!-- <chèn ảnh vào đây: reports/figures/bivariate_overtime_attrition.png (Stacked bar chart hoặc Count plot Overtime vs Attrition)> -->
+#### Numerical Variables vs Attrition
 
 <p align="center">
-  <img src="reports/figures/bivariate_overtime_attrition.png" width="90%" />
+  <img src="reports/figures/numerical_attrition.png" width="90%" />
 </p>
 
-### Multivariate Analysis
+- Young employees (20-30 years old) show a significantly higher tendency to leave, whereas stability increases after age 35.
+- Regarding commute: retained employees primarily live close to the company (under 40km), while those who left are heavily concentrated at distances over 50km, confirming that geographic location is a major barrier to long-term commitment.
+- For work-related factors, **Years at Company** indicates that the first 0-5 years are the most "sensitive" period with a high turnover rate, requiring the organization to focus heavily on the onboarding process and early talent retention.
+- **Monthly Income** shows no clear difference between the two groups (the trend lines almost overlap), suggesting that the decision to leave in this dataset is not primarily driven by absolute salary figures.
 
-- Correlation analysis between numerical features
-- Feature importance ranking using Random Forest
+#### Categorical Variables vs Attrition
 
-<!-- <chèn ảnh vào đây: reports/figures/correlation_matrix.png (Heatmap ma trận tương quan)> -->
+**Group 1: Work Environment & Pressure**
 
-![Correlation Matrix](reports/figures/numerical_correlation_matrix.png)
+<p align="center">
+  <img src="reports/figures/work_environment_pressure.png" width="90%" />
+</p>
+
+- **Overtime:** While the non-overtime group shows a higher tendency to stay, the balance reverses for the overtime group, where the number of employees leaving (10,025) exceeds those staying (9,425). This confirms that workload pressure is a direct catalyst pushing employees to leave the organization.
+- **Work-Life Balance:** The "Good" and "Excellent" groups exhibit strong retention rates. However, alarmingly, in the two lowest categories ("Poor" and "Fair"), the number of departing employees significantly outweighs those staying. Particularly, the "Fair" group sees a massive volume of departures (10,370).
+- **Remote Work:** This is the most polarizing factor in this group. Inflexible work policies (No Remote) trigger a massive wave of resignations. Conversely, the remote-enabled group (Yes) demonstrates exceptionally high stability, with retained employees outnumbering departures by nearly 3 to 1, proving that remote work is a "golden key" for retention.
+- **Job Satisfaction:** Although the general trend suggests higher satisfaction leads to lower attrition, an interesting paradox exists at the "Very High" level. Here, the number of departing employees (6,405) slightly exceeds those staying (5,706). This implies that this cohort may not leave due to dissatisfaction but rather because they are top performers finding better career advancement opportunities elsewhere.
+
+**Group 2: Motivation & Growth**
+
+<p align="center">
+  <img src="reports/figures/motivation_growth.png" width="90%" />
+</p>
+
+- **Leadership & Innovation Opportunities:** A concerning reality is that the vast majority of employees lack access to leadership or innovation roles. Although in the "No" group the number of retained employees slightly edges out departures, the absolute volume of turnover here is massive (over 27,000 employees), indicating that a lack of development space is a significant driver of attrition.
+- **Job Level:** The **Entry-level** cohort is in a "red alert" state, with the number of departures (15,082) nearly doubling those retained (8,785). In contrast, retention stabilizes dramatically at the **Senior** level. This suggests the company is struggling to retain young/new talent during their initial stages.
+- **Performance Rating:** A higher departure rate than retention rate only appears in the low-performance groups (**"Low"** and **"Below Average"**). Meanwhile, **"High"** and **"Average"** performance groups continue to show strong commitment.
+- **Employee Recognition:** Recognition levels do not create as drastic a gap in turnover rates as other variables. However, the group receiving **"Low"** recognition still contributes the largest absolute number of departures, indicating that improving the reward culture could help mitigate overall personnel fluctuation.
+
+**Group 3: Organizational Factors**
+
+<p align="center">
+  <img src="reports/figures/organization_factor.png" width="90%" />
+</p>
+
+- **Company Reputation:** The data reveals a stark polarization: while the **"Good"** and **"Excellent"** reputation groups boast strong retention, the balance immediately flips for the **"Fair"** and **"Poor"** groups. At these two lowest tiers, departing employees outnumber those staying, confirming that declining trust in the organization is a major driver of turnover.
+- **Company Size:** **"Small"** companies face the most precarious situation, with departure and retention rates nearly equal. Conversely, **"Medium"** and **"Large"** companies exhibit better retention capabilities, likely due to more robust welfare systems and established operational processes.
+
+**Group 4: Demographics & Profile**
+
+<p align="center">
+  <img src="reports/figures/demographic_profile.png" width="90%" />
+</p>
+
+- **Marital Status:** This is the sharpest risk-categorization factor. The **Single** group faces an exceptionally high turnover rate (66.8%), completely dominating the **Married** and **Divorced** cohorts.
+- **Job Role:** Attrition rates across all departments (Finance, Education, Technology, etc.) hover around 47-48% without major discrepancies. This suggests that the root causes of turnover are **systemic** across the entire company rather than localized to specific departments.
+- **Gender:** A notable disparity exists where **Female** employees exhibit a significantly higher turnover rate (53.2%) compared to Males (42.9%). This serves as a signal for the HR department to review diversity, equity, and inclusion (DEI) policies or female-specific benefits.
+- **Education Level:** While turnover rates for education levels ranging from High School to Master's are comparably high (~49%), the **PhD** group stands out as a brilliant exception with a retention rate of **75.1%**. It is highly probable that this cohort of senior experts holds stable positions with more specialized compensation packages.
 
 ### Power BI Dashboard
 
 🔗 **Live Dashboard:** [View on Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiYWIxNGM0OTYtYjdjZS00OGU1LWJlM2YtNWFiYWEyMTBjOTZkIiwidCI6IjZhYzJhZDA2LTY5MmMtNDY2My1iN2FmLWE5ZmYyYTg2NmQwYyIsImMiOjEwfQ%3D%3D)
 
 ![Power BI Dashboard Overview](reports/powerbi/Attrition_Overview.png)
-
-### Key Insights
-
-1. The dataset is clean with no missing values, no duplicates, and no invalid values
-2. Target variable is well-balanced (~52.5/47.5 split)
-3. Outliers detected in `Years at Company` (273) and `Monthly Income` (50) - treated with capping
-4. Both numerical and categorical features show meaningful variation across attrition groups
-5. Organizational factors (Company Reputation, Employee Recognition) are as important as job-specific factors
 
 ---
 
